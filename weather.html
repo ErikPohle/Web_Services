@@ -135,6 +135,16 @@
 		var dataToday = data.currently;
 		var imgToday = data.currently.icon;
 
+    var color = "grey";
+    if (data.currently.apparentTemperature > 85) {
+      color = "red";
+    }
+    else if (data.currently.apparentTemperature < 65) {
+      color = "blue";
+    }
+
+
+
 		var pic = document.getElementById('image_today');
 		pic.src = "img/" + imgToday + ".png";
 
@@ -146,7 +156,8 @@
 
 		var thermometer = document.getElementById('thermometer_inner');
 		thermometer.setAttribute("style", "height:" + dataToday.apparentTemperature + "%");
-
+    thermometer.style.background = color;
+console.log(color);
 		var precipToday = document.getElementById('precip_today');
 		precipToday.innerHTML = dataToday.precipProbability * 100 + "%";
 

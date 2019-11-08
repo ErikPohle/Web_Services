@@ -219,23 +219,23 @@
 
 				*/
 				var week_names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']; //This is a helper array to help convert the day of the week [0-7] to a named value [Sunday - Saturday]
-        var cards = document.getElementsByClassName('card-body');
+        var cards = document.getElementsByClassName('card-title');
+        var cardDetail = document.getElementsByClassName('card-text');
         for(i = 0; i < week_names.length; i++) {
           cards[i].innerHTML = week_names[i];
           var tempHi = data.daily.data[i].temperatureHigh;
           var tempLo = data.daily.data[i].temperatureLow;
 
-          cards[i].innerHTML = "High: " + tempHi + "<br>Low: " + tempLo;
+          cardDetail[i].innerHTML = "High: " + tempHi + "<br>Low: " + tempLo;
         }
 
-        var cardDetail = document.getElementsByClassName('card-text');
-        console.log(cardDetail);
+        /*console.log(cardDetail);
         for(i = 0; i < cardDetail.length; i++) {
           var tempHi = data.daily.data[i].temperatureHigh;
           var tempLo = data.daily.data[i].temperatureLow;
 
           cardDetail[i].innerHTML = tempHi + "<br>" + tempLo;
-        }
+        }*/
 
 			})
 		})
